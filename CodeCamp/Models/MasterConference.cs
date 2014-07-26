@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace CodeCamp
+namespace CodeCamp.Models
 {
 	public class MasterConference
 	{
