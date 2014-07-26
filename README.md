@@ -2,6 +2,31 @@ Desert Code Camp App
 =============
 
 
+Goals
+----
+
+ * Create a brand new Desert Code Camp mobile application
+ * Cross platform with Xamarin.Forms from one single code base
+ * Open Source & Free Community Project
+ 
+
+Mobile App Goals
+----
+
+* Browse Sessions/My Sessions from site
+* Browse Speakers
+* Browse Location/Venue
+* Browse Twitter Activity for Event
+* Browse Sponsors
+* Get information about event
+ 
+
+My Conference Events Data
+----
+
+* Event data comes from:  http://myconferenceevents.com
+* Test data can be browsed from:  http://myconferenceevents.com/services/test.htm
+
 
 Setup
 ----
