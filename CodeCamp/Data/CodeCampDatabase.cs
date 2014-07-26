@@ -2,7 +2,7 @@
 using SQLite;
 using System.Collections.Generic;
 using System.Linq;
-using CodeCamp.Models.Evolve;
+using CodeCamp.Models.Database;
 
 namespace CodeCamp
 {
@@ -27,6 +27,10 @@ namespace CodeCamp
 			database.CreateTable<Session>();
 			database.CreateTable<SessionSpeaker>();
 			database.CreateTable<Favorite>();
+			database.CreateTable<Conference>();
+			database.CreateTable<MasterConference>();
+			database.CreateTable<State>();
+			database.CreateTable<Location> ();
 		}
 
 		public IList<Speaker> GetSpeakers ()
@@ -40,11 +44,42 @@ namespace CodeCamp
 		public IList<Session> GetSessions ()
 		{
 			lock (locker) {
-				var sessions = database.Query<Session>("SELECT * FROM [Session] ORDER BY [Begins]");
+				var sessions = database.Query<Session>("SELECT * FROM [Session] ORDER BY [Name]");
 				return sessions.ToList();
+			}
+		}
+
+		public IList<Location> GetLocations ()
+		{
+			lock (locker) {
+				var locations = database.Query<Location>("SELECT * FROM [Location]");
+				return locations.ToList();
+			}
+		}
+
+		public IList<State> GetStates ()
+		{
+			lock (locker) {
+				var states = database.Query<State>("SELECT * FROM [State] ORDER BY [Name]");
+				return states.ToList();
+			}
+		}
+
+		public IList<MasterConference> GetMasterConferences ()
+		{
+			lock (locker) {
+				var masterConferences = database.Query<MasterConference>("SELECT * FROM [MasterConference] ORDER BY [Name]");
+				return masterConferences.ToList();
+			}
+		}
+
+		public IList<Conference> GetConferencesByMasterConferenceId (int masterConferenceId)
+		{
+			lock (locker) {
+				var conferences = database.Query<Conference>("SELECT * FROM [Conference] " + masterConferenceId + " ORDER BY [DateStart] DESC");
+				return conferences.ToList();
 			}
 		}
 
 	}
 }
-

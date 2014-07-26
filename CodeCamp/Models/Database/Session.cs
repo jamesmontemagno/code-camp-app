@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections;
 using SQLite;
 
-namespace CodeCamp.Models.Evolve
+namespace CodeCamp.Models.Database
 {
 	public class Session
 	{

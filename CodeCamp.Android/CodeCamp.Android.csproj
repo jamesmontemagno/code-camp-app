@@ -82,9 +82,6 @@
     <Reference Include="System.Net.Http.Primitives">
       <HintPath>..\packages\Microsoft.Net.Http.2.2.27-beta\lib\monoandroid\System.Net.Http.Primitives.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.Auth.Android">
-      <HintPath>..\Components\xamarin.social-1.1.1\lib\android\Xamarin.Auth.Android.dll</HintPath>
-    </Reference>
     <Reference Include="Xamarin.Forms.Platform.Android">
       <HintPath>..\packages\Xamarin.Forms.1.2.1.6229\lib\MonoAndroid10\Xamarin.Forms.Platform.Android.dll</HintPath>
     </Reference>
@@ -111,6 +108,9 @@
     </Reference>
     <Reference Include="Xamarin.Android.Support.v4">
       <HintPath>..\packages\Xamarin.Android.Support.v4.20.0.0.2\lib\MonoAndroid10\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Auth.Android">
+      <HintPath>..\Components\xamarin.social-1.1.1\lib\android\Xamarin.Auth.Android.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Social.Android">
       <HintPath>..\Components\xamarin.social-1.1.1\lib\android\Xamarin.Social.Android.dll</HintPath>

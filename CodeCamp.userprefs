@@ -1,0 +1,18 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Ad-Hoc" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CodeCamp/Models/Database/Conference.cs">
+    <Files>
+      <File FileName="CodeCamp/Views/LocationPage.cs" Line="5" Column="19" />
+      <File FileName="CodeCamp/Views/Cells/SessionCell.cs" Line="1" Column="1" />
+      <File FileName="CodeCamp/Views/Cells/SpeakerCell.cs" Line="1" Column="1" />
+      <File FileName="CodeCamp/Models/MasterConference.cs" Line="1" Column="1" />
+      <File FileName="CodeCamp/Models/Database/MasterConference.cs" Line="9" Column="5" />
+      <File FileName="CodeCamp/Data/CodeCampDatabase.cs" Line="1" Column="1" />
+      <File FileName="CodeCamp/Models/Database/Conference.cs" Line="16" Column="30" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
