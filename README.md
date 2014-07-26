@@ -3,14 +3,13 @@ Desert Code Camp App
 
 
 
-## Setup
+Setup
+----
 
 * Download Location: Since Google has long file paths it is recommended to download this into C:\Source
 
 
-## Google Play Services
-
- Maps (special note)
+Maps (special note)
 ----
 
 `Xamarin.Forms.Maps` uses the native map APIs on each platform. If you are creating your own Xamarin.Forms app, **Xamarin.Forms.Maps** is a a separate NuGet package that you should download. On Android, this also has a dependency on **GooglePlayServices** (another NuGet) which is downloaded automatically. These have already been added to the CodeCamp solution.
@@ -24,6 +23,8 @@ calls to each application. Refer to the CodeCamp example where this is already i
 ####Install Google Play Services in SDK Mangaer
 
 Open SDK Manager and scroll to bottom and select Google Play Services.
+
+![](http://content.screencast.com/users/JamesMontemagno/folders/Jing/media/7586e224-a909-4f74-b89b-a5e93a4d9803/00000355.png)
 
 
 ###iOS
