@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using SQLite;
 using Xamarin.Forms;
 
-namespace CodeCamp.Models.Evolve
+namespace CodeCamp.Models.Database
 {
 	/* Example Json
 {"id":0,"name":"Chris Hardy","twitterHandle":"chrisntr","bio":"Chris Hardy, a Microsoft ASPInsider, is an .NET consultant focusing on MonoTouch and Mono for Android development.\n\nEver since MonoTouch was in beta, Chris has been developing and evangelising MonoTouch and Mono for Android and was one of the first users to get a MonoTouch application on to the App Store. Speaking at conferences around the world on the subject, Chris has been a key part of the community and extended this by contributing to MonoTouch and Mono for Android books.","headshotUrl":"/images/speakers/chris.jpg"}

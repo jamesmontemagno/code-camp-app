@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CodeCamp.Models.Evolve
+namespace CodeCamp.Models.Database
 {
 	public class Favorite
 	{
