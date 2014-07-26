@@ -1,5 +1,7 @@
-code-camp-app
+Desert Code Camp App
 =============
+
+
 
 ## Setup
 
@@ -18,6 +20,10 @@ After adding a reference to **Xamarin.Forms.Maps** in a new project, you also ne
     Xamarin.Forms.FormsMaps.Init()
     
 calls to each application. Refer to the CodeCamp example where this is already implemented.
+
+####Install Google Play Services in SDK Mangaer
+
+Open SDK Manager and scroll to bottom and select Google Play Services.
 
 
 ###iOS
