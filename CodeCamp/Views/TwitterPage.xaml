@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+					   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+					   x:Class="CodeCamp.Views.TwitterPage"
+             Title="{Binding Title}">
+  <StackLayout>
+    <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>
+    <ListView ItemsSource="{Binding Tweets}" RowHeight="110">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <ViewCell.View>
+              <StackLayout Orientation="Vertical" Spacing="10" Padding="10">
+                <StackLayout Orientation="Horizontal">
+                  <Label Text="{Binding ScreenName}" Font="Medium" HorizontalOptions="FillAndExpand"/>
+                  <Label Text="{Binding Date}" Font="Bold,Micro" VerticalOptions="Center"/>
+                </StackLayout>
+                <Label Text="{Binding Text}" Font="Small" LineBreakMode="WordWrap"/>
+              </StackLayout>
+            </ViewCell.View>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+</ContentPage>
