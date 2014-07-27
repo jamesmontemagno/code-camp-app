@@ -26,7 +26,7 @@ namespace CodeCamp.Models.Database
 		public int MasterConferenceId { get; set; }
 		public string Name { get; set; }
 		public string NextConferenceText { get; set; }
-
+    [Ignore]
 		public State State { get; set; }
 		public string Subdomain { get; set; }
 	}

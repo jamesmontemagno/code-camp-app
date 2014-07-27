@@ -14,13 +14,11 @@ namespace CodeCamp
       source.Url = "http://oct2014.desertcodecamp.com/about";
 
 			var web = new WebView {
-				WidthRequest = 300,
-				HeightRequest = 400
 			};
 			web.Source = source;
 
 			Content = new StackLayout {
-				VerticalOptions = LayoutOptions.StartAndExpand,
+				VerticalOptions = LayoutOptions.FillAndExpand,
 				Children = {
 					web,
 				}

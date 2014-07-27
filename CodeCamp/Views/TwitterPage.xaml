@@ -5,7 +5,7 @@
              Title="{Binding Title}">
   <StackLayout>
     <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>
-    <ListView ItemsSource="{Binding Tweets}" RowHeight="110">
+    <ListView x:Name="ListTweets" ItemsSource="{Binding Tweets}" RowHeight="110">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
