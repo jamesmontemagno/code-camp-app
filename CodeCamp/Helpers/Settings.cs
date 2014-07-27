@@ -21,22 +21,51 @@ namespace CodeCamp.Helpers
 
     #region Setting Constants
 
-    private const string SettingsKey = "settings_key";
-    private static readonly string SettingsDefault = string.Empty;
+    private const string UsernameKey = "username_key";
+    private static readonly string UsernameDefault = string.Empty;
 
+    private const string MasterConferenceKey = "masterconference_key";
+    private static readonly int MasterConferenceDefault = -1;
+
+    private const string ConferenceKey = "conference_key";
+    private static readonly int ConferenceDefault = -1;
     #endregion
 
-
-    public static string GeneralSettings
+    public static string UsernameSettings
     {
       get
       {
-        return AppSettings.GetValueOrDefault(SettingsKey, SettingsDefault);
+        return AppSettings.GetValueOrDefault(UsernameKey, UsernameDefault);
       }
       set
       {
-        //if value has changed then save it!
-        if (AppSettings.AddOrUpdateValue(SettingsKey, value))
+        if (AppSettings.AddOrUpdateValue(UsernameKey, value))
+          AppSettings.Save();
+      }
+    }
+
+    public static int MasterConference
+    {
+      get
+      {
+        return AppSettings.GetValueOrDefault(MasterConferenceKey, MasterConferenceDefault);
+      }
+      set
+      {
+        if (AppSettings.AddOrUpdateValue(MasterConferenceKey, value))
+          AppSettings.Save();
+      }
+    }
+
+    public static int Conference
+    {
+      get
+      {
+        return AppSettings.GetValueOrDefault(ConferenceKey, ConferenceDefault);
+      }
+      set
+      {
+        if (AppSettings.AddOrUpdateValue(ConferenceKey, value))
           AppSettings.Save();
       }
     }
