@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace CodeCamp.Views
 {
@@ -13,6 +14,8 @@ namespace CodeCamp.Views
     public TwitterPage()
     {
       InitializeComponent();
+
+      ListTweets.RowHeight = Device.OnPlatform<int>(110, 110, 150);
       this.BindingContext = viewModel = new TwitterViewModel();
     }
 

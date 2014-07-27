@@ -25,7 +25,7 @@ namespace CodeCamp
 		{
 			master = m;
       BackgroundColor = App.NavTint;
-			Title = "CodeCamp";
+			Title = "menu";
 			Icon = "slideout.png";
 
 			var section = new TableSection () {

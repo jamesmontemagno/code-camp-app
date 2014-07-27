@@ -1,8 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="CodeCampAndroid.CodeCampAndroid" android:installLocation="auto">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.myconferenceevents.android" android:installLocation="auto">
 	<uses-sdk android:targetSdkVersion="19" android:minSdkVersion="15" />
 	<application android:label="CodeCamp" android:theme="@android:style/Theme.Holo.Light" android:icon="@drawable/ic_launcher">
+		<!--
+		For the MAP to work, you *must* create your own API key. See instructions here:
+			http://developer.xamarin.com/guides/cross-platform/xamarin-forms/working-with/maps/
+		which will require you to visit the Google Developer Console here:
+			https://console.developers.google.com/
+		note the package name (listed above) is com.myconferenceevents.android - this value must be appended to the generated SHA1 hash that you enter into the console
+		-->
+		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="YOUR_API_KEY_HERE" />
 		<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
 	</application>
+	<!-- Google Maps for Android v2 requires OpenGL ES v2 -->
+	<uses-feature android:glEsVersion="0x00020000" android:required="true" />
+	<!-- We need to be able to download map tiles and access Google Play Services-->
+	<!-- Allow the application to access Google web-based services. -->
+	<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+	<!-- Google Maps for Android v2 will cache map tiles on external storage -->
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<!-- Google Maps for Android v2 needs this permission so that it may check the connection state as it must download data -->
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<!-- These are optional, but recommended. They will allow Maps to use the My Location provider. -->
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+	<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.INTERNET" />
 </manifest>

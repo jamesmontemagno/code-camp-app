@@ -32,7 +32,9 @@ namespace CodeCamp
 			label = new Label {
 				YAlign = TextAlignment.Center,
 				TextColor = Color.White,
-        Font = Font.SystemFontOfSize(20, FontAttributes.None)
+        Font = Device.OnPlatform(Font.SystemFontOfSize(20),
+        Font.SystemFontOfSize(20),
+        Font.SystemFontOfSize(40))
 			};
 
 			var layout = new StackLayout {

@@ -118,7 +118,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CodeCampSQLite.db3" />
+    <Content Include="CodeCampSQLite.db3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">

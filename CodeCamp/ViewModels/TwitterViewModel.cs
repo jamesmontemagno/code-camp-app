@@ -86,7 +86,7 @@ namespace CodeCamp.ViewModels
       catch (Exception ex)
       {
         var page = new ContentPage();
-        page.DisplayAlert("Error", "Unable to load twitter.", "OK", null);
+        page.DisplayAlert("Error", "Unable to load twitter.", "OK");
       }
 
       IsBusy = false;

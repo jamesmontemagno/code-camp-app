@@ -18,10 +18,6 @@ namespace CodeCamp
 			var map = new Map(new MapSpan(new Position(30.26535, -97.738613), 0.05, 0.05))
 			{
 				MapType = MapType.Street,
-				HeightRequest = 508
-//				X=0, Y=0,
-//				Width = 320,
-//				Height = 420
 			};
 			map.BackgroundColor = Color.White;
 
@@ -34,7 +30,7 @@ namespace CodeCamp
 				});
 
 			Content = new StackLayout {
-				VerticalOptions = LayoutOptions.StartAndExpand,
+				VerticalOptions = LayoutOptions.FillAndExpand,
 				Children = {
 					map
 

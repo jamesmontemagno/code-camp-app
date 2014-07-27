@@ -9,6 +9,9 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using CodeCamp.WindowsPhone.Resources;
 using Xamarin.Forms;
+using System.IO;
+using SQLite;
+using Windows.Storage;
 
 namespace CodeCamp.WindowsPhone
 {
@@ -21,6 +24,12 @@ namespace CodeCamp.WindowsPhone
 
       Xamarin.FormsMaps.Init();
       Forms.Init();
+
+      var dbLocation = "CodeCampSQLite.db3";
+      dbLocation = Path.Combine(ApplicationData.Current.LocalFolder.Path, dbLocation);
+      var connection = new SQLiteConnection(dbLocation);
+      // Set the database connection string
+      CodeCamp.App.SetDatabaseConnection(connection);
 
       // Set our view from the "main" layout resource
       Content = CodeCamp.App.GetMainPage().ConvertPageToUIElement(this);

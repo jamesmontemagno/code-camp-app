@@ -26,10 +26,10 @@ namespace CodeCamp
 			database.CreateTable<Speaker>();
 			database.CreateTable<Session>();
 			database.CreateTable<SessionSpeaker>();
-			database.CreateTable<Favorite>();
+      database.CreateTable<Favorite>();
+      database.CreateTable<State>();
 			database.CreateTable<Conference>();
 			database.CreateTable<MasterConference>();
-			database.CreateTable<State>();
 			database.CreateTable<Location> ();
 		}
 

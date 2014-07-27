@@ -24,6 +24,7 @@ namespace CodeCampAndroid
 
 			ShareActivityContext = this; // HACK: for SpeakButtonRenderer to get an Activity/Context reference
 
+      Xamarin.FormsMaps.Init(this, bundle);
 			Xamarin.Forms.Forms.Init (this, bundle);
 
 			var sqliteFilename = "CodeCampSQLite.db3";
