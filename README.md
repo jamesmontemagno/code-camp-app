@@ -33,6 +33,10 @@ Setup
 
 * Download Location: Since Google has long file paths it is recommended to download this into C:\Source
 
+###Debugging Windows Phone
+
+* To Debug on Phone: Change Configuration Manager to run on ARM for project
+* To Debug on Simulator: Change Configuration Manager to run on x86 for project
 
 Maps (special note)
 ----
