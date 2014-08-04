@@ -33,6 +33,7 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Helpers\Services.cs" />
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Models\Conference.cs" />
     <Compile Include="Models\Location.cs" />

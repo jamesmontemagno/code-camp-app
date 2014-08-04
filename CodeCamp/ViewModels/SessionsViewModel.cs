@@ -1,4 +1,5 @@
-﻿using CodeCamp.Models;
+﻿using CodeCamp.Helpers;
+using CodeCamp.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,6 @@ namespace CodeCamp.ViewModels
       }
     }
 
-    private const string SessionsUrl = "http://myconferenceevents.com/Services/Session.svc/GetSessionsByConferenceId?conferenceId={0}";
     private async Task ExecuteLoadSessionsCommand()
     {
       if (IsBusy)
@@ -43,11 +43,7 @@ namespace CodeCamp.ViewModels
       Sessions.Clear();
       try
       {
-        var client = new HttpClient();
-        var url = string.Format(SessionsUrl, "9");
-        var json = await client.GetStringAsync(url);
-
-        var results = JsonConvert.DeserializeObject<List<Session>>(json);
+        var results = await Services.GetSessionsForConferenceId(9);
         foreach(var session in results)
         {
           Sessions.Add(session);
