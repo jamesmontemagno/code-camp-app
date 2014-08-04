@@ -52,6 +52,7 @@
     </Compile>
     <Compile Include="Views\MenuPage.cs" />
     <Compile Include="Views\Cells\MenuCell.cs" />
+    <Compile Include="Views\TracksPage.cs" />
     <Compile Include="Views\SessionsPage.cs" />
     <Compile Include="Views\SpeakersPage.cs" />
     <Compile Include="Views\SpeakerPage.cs" />

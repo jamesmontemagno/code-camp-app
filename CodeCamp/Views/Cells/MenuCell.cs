@@ -11,7 +11,8 @@ namespace CodeCamp
     Sponsors,
     Twitter,
     Location,
-    About
+    About,
+    Tracks
   }
 
 	public class MenuCell : ViewCell
