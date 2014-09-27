@@ -21,7 +21,13 @@ namespace CodeCamp.Models
     public string SessionEditUrl { get; set; }
     public int SessionId { get; set; }
     public string SessionUrl { get; set; }
-    public object Time { get; set; }
+    public Time Time { get; set; }
     public Track Track { get; set; }
+		public string TimeDisplay
+		{
+			get { 
+				return Time == null ? "TBA" : Time.Name;
+			}
+		}
   }
 }

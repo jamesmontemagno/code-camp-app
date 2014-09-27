@@ -4,14 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using CodeCamp.Models;
+using CodeCamp.ViewModels;
 
 namespace CodeCamp
 {
 	public class SessionPage : ContentPage
 	{
-		public SessionPage ()
+		public SessionPage (Session session)
 		{
 			Title = "Session";
+
+
 
 			NavigationPage.SetHasNavigationBar (this, true);
 
@@ -19,25 +23,25 @@ namespace CodeCamp
 				Text = "Session",
 				Font = Font.SystemFontOfSize(18)
 			};
-			title.SetBinding (Label.TextProperty, "Title");
+			title.SetBinding (Label.TextProperty, "Session.Name");
 
 			var time = new Label { 
 				Text = "Time",
 				Font = Font.SystemFontOfSize(10)
 			};
-			time.SetBinding (Label.TextProperty, "DateTimeDisplay");
+			time.SetBinding (Label.TextProperty, "Session.TimeDisplay");
 
 			var location = new Label { 
 				Text = "Location",
 				Font = Font.SystemFontOfSize(10)
 			};
-			location.SetBinding (Label.TextProperty, "LocationDisplay");
+			location.SetBinding (Label.TextProperty, "Session.Room.Name");
 
 			var @abstract = new Label { 
 				Text = "Brief",
 				Font = Font.SystemFontOfSize(12)
 			};
-			@abstract.SetBinding (Label.TextProperty, "Abstract");
+			@abstract.SetBinding (Label.TextProperty, "Session.Abstract");
 
 
 			var scroll = new ScrollView { 
@@ -54,6 +58,8 @@ namespace CodeCamp
 				}
 			};
 			Content = scroll;
+
+			BindingContext = new SessionViewModel (session);
 		}
 	}
 }

@@ -16,10 +16,12 @@ namespace CodeCamp.ViewModels
   public class SessionsViewModel : BaseViewModel
   {
     public ObservableCollection<Session> Sessions { get; set; }
+		public ObservableCollection<Grouping<string, Session>>SessionsGrouped { get; set; }
     public SessionsViewModel()
     {
       Title = "Sessions";
       Sessions = new ObservableCollection<Session>();
+			SessionsGrouped = new ObservableCollection<Grouping<string, Session>> ();
     }
 
     private ICommand loadSessionsCommand;
@@ -43,12 +45,23 @@ namespace CodeCamp.ViewModels
       Sessions.Clear();
       try
       {
-        var results = await Services.GetSessionsForConferenceId(9);
-        foreach(var session in results)
+				var results = await Services.GetSessionsForConferenceId(Settings.Conference);
+				foreach(var session in results.Where(s => s.IsApproved))
         {
           Sessions.Add(session);
         }
 
+
+				//Use linq to sorty our monkeys by name and then group them by the new name sort property
+				var sorted = from session in Sessions
+					orderby session.Name
+					group session by session.TimeDisplay into sessionGroup
+					select new Grouping<string, Session>(sessionGroup.Key, sessionGroup);
+
+				SessionsGrouped.Clear();
+				//create a new collection of groups
+				foreach(var sort in sorted)
+					SessionsGrouped.Add(sort);
       }
       catch (Exception ex)
       {

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using CodeCamp.Models;
 
 namespace CodeCamp
 {
@@ -28,14 +29,16 @@ namespace CodeCamp
 
       ToolbarItems.Add(refresh);
 
+
 			listView = new ListView {
 				RowHeight = 40
 			};
 			// see the SessionCell implementation for how the variable row height is calculated
 			listView.HasUnevenRows = true;
 
-			listView.ItemsSource = viewModel.Sessions;//App.Database.GetSessions ();
-			//listView.ItemTemplate = new DataTemplate (typeof (SessionCell));
+			listView.ItemsSource = viewModel.SessionsGrouped;
+			listView.IsGroupingEnabled = true;
+			listView.GroupDisplayBinding = new Binding("Key"); //this is our key property on grouping. - See more at: http://motzcod.es/#sthash.QlKNtfa4.dpuf
 
       var cell = new DataTemplate(typeof(TextCell));
       cell.SetBinding(TextCell.TextProperty, "Name");
@@ -45,10 +48,12 @@ namespace CodeCamp
 
 
 			listView.ItemSelected += (sender, e) => {
-				/*var session = e.SelectedItem as Session;
-				var sessionPage = new SessionPage();
-				sessionPage.BindingContext = session;
-				Navigation.PushAsync(sessionPage);*/
+				if(listView.SelectedItem == null)
+					return;
+				var session = e.SelectedItem as Session;
+				var sessionPage = new SessionPage(session);
+				Navigation.PushAsync(sessionPage);
+				listView.SelectedItem = null;
 			};
 
       var activityIndicator = new ActivityIndicator();
